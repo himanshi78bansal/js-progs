@@ -1,0 +1,61 @@
+<!-- Create a toggle button that changes the screen to dark-mode when clicked & light-mode when clicked again. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <style>
+        .dark {
+            background-color: black;
+            color: white;
+        }
+
+        .dark {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML -->
+    <button class = "btn">click mode</button>
+    <p>I'll change from black to white and white to black</p>
+    <!-- JAVASCRIPT -->
+    <script>
+        // access button
+        let btn = document.querySelector(".btn");
+        let body = document.querySelector("body");
+        // initial value
+        let mode = "light";
+        // function
+        const handler = () =>
+        {
+            if(mode==="light"){
+                mode = "dark";
+                btn.style.backgroundColor = "yellow";
+                btn.style.color = "black";
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+                let dark = body.append("I'm dark mode.\n");
+                // body.classList.add("dark");  //if styling is done in separate style.css
+                // body.classList.remove("light");
+            } else {
+                mode = "light";
+                btn.style.backgroundColor = "blue";
+                btn.style.color = "white";
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+                body.append("I'm light mode.")
+                // body.classList.add("light");     //if styling is done in separate style.css
+                // body.classList.remove("dark");
+            }
+            console.log(mode);
+        }
+        // add event listener
+        btn.addEventListener("click", handler);
+    </script>
+</body>
+</html>
